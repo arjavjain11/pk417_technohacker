@@ -22,7 +22,17 @@
 
   <!-- Enter a keywords for the page in tag -->
   <meta name="Keywords" content="ENTER_KEYWORDS_HERE">
-
+    <style>
+    .main {
+    background-color: #cccccc;
+    width: 400px;
+    height: 456px;
+    margin: 7em auto;
+    }
+    .sign {
+    padding-top: 25px;
+    }
+    </style>
 </head>
 <body>
 <div class="main">
@@ -34,6 +44,9 @@
       <input class="pass" type="password" placeholder="Password" name="password">
       <!-- <input type="hidden" name="signUp" value="1"> -->
       <button class="submit" name="signUp">Sign Up</button>
+      <p class="text-center mt-3" style="color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;">Have an Account? <a href="signin.php" style="color:#8C55AA;">Sign in</a></p>
     </form>
     <?php
     $conn= new mysqli("localhost","root","","farmersite");
