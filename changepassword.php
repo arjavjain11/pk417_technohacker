@@ -24,9 +24,11 @@
       <input class="pass" type="password" align="center" name="password" placeholder="Old Password">
       <input class="pass" type="password" align="center" name="npassword" placeholder="New Password">
       <input class="pass" type="password" align="center" name="cnpassword" placeholder="Confirm Password">
+      
       <button class="submit" align="center" style="margin-left: 27%;" name="chpass">Change Password</button>
         
     </form>
+    </div>
 
     <?php
 session_start();
@@ -44,7 +46,7 @@ $message = "Password Changed Sucessfully";
 }
 ?>
 
-  </div>
+ 
 
 </body>
 
