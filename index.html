@@ -116,6 +116,15 @@ section h3 {
 nav{
 	height:auto;
 }
+
+div.sticky {
+  position: -webkit-fixed;
+  position: fixed;
+  bottom: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
 }
        </style>
     </head>
@@ -151,6 +160,7 @@ nav{
 				</div>
 			  </nav>
             <main>
+
                 <section>
                     <h3>किसान भाइयों आपका स्वागत है</h3>
                     <br></br>
@@ -165,12 +175,16 @@ nav{
                     <a href="signup.php" class="bttwo">signup here</a>
                 </section>
             </main>
+
             
+            		<div id="scroll">
+            			<p>	<a href="news.html" target="_blank" rel="noopener">	<img src="images/NEws.png" alt="News" style="height: 80px;width: 80px; margin-left: 3%;margin-bottom: 8%;">	</a>	</p>
+					</div>
+
 		</header>
 		<script src="js/jquery-3.4.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 	
-
 
 	<footer class="pt-4 pt-md-5 border-top" style="margin: 0px 0px 0px 0px;padding: 0px 0px 0px 0px;">
     <div class="row" style="margin:0px 0px 0px 0px;">
@@ -217,3 +231,5 @@ nav{
     </body>
     
 </html>
+
+<script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"0ef503d75400401c",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script>
