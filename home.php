@@ -8,9 +8,9 @@ if(!isset($_SESSION['user_email'])){
    $q = "select * from users where user_email = '$user_email'";
    $run = mysqli_query($conn,$q);
   $row = mysqli_fetch_row($run);
-  $username = $row[1];
+  $username = $row[2];
   $userid = $row[0];
-  $userimage = $row[5];
+  $userimage = $row[6];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,13 +33,27 @@ if(!isset($_SESSION['user_email'])){
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <style>
     .user-panel img {
-    height: 0;
-    width: 0;
-}
-.user-panel .imginfo {
-    height: 50px;
-    width: 50px;
-}
+      height: 0;
+      width: 0;
+    }
+
+    .user-panel .imginfo {
+      height: 50px;
+      width: 50px;
+    }
+
+    .modal-header {
+      border-bottom: none;
+    }
+
+    textarea {
+      border: 1px solid #999999;
+      width: 100%;
+    }
+
+    .query_form p {
+      margin-botton: 0;
+    }
   </style>
 </head>
 
@@ -90,21 +104,22 @@ if(!isset($_SESSION['user_email'])){
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="row">
             <div class="col-6 text-center">
-            <?php  if(isset($userimage)){ ?>
-            <img src="images/<?php echo $userimage; ?>" class="imginfo" style="border-radius: 50%;">
+              <?php  if(isset($userimage)){ ?>
+              <img src="images/<?php echo $userimage; ?>" class="imginfo" style="border-radius: 50%;">
 
-          <?php }else{
+              <?php }else{
 
           }  ?>
             </div>
             <div class="col-6 d-flex">
-            <h5 style="color: #fff; font-size:20px; text-transform: capitalize; align-items:center;" class="d-flex text-center"><?php echo $username; 
+              <h5 style="color: #fff; font-size:20px; text-transform: capitalize; align-items:center;"
+                class="d-flex text-center"><?php echo $username; 
                  ?></h5>
             </div>
           </div>
 
 
-        
+
         </div>
 
         <!-- Sidebar Menu -->
@@ -143,8 +158,12 @@ if(!isset($_SESSION['user_email'])){
                 <p>Change password</p>
               </a>
             </li>
+            <li class="nav-item mt-3">
+              <a class="nav-link bg-danger text-center ml-5 mr-5" style="border-radius: 5px;" href="logout.php"
+                role="button" data-toggle="modal" data-target="#farm_query">Ask Query</a>
+            </li>
 
-            <li class="nav-item">
+            <li class="nav-item mt-3">
               <a class="nav-link bg-primary text-center ml-5 mr-5" style="border-radius: 5px;" href="logout.php"
                 role="button">logout</a>
             </li>
@@ -181,6 +200,94 @@ if(!isset($_SESSION['user_email'])){
 
 
 
+	<div class="news">
+		<p><a href="https://economictimes.indiatimes.com/topic/Indian-farmers" target="_blank" rel="noopener"><button
+					style="background-color: #ea5e0d; color: #fff; float: right; border-radius: 22px; width: 10%;">View
+					All</button></a></p>
+		<div>
+
+			<p>
+				<marquee onmouseover="this.stop()" onmouseout="this.start()" direction="up" height="450px">
+			</p>
+			<center>
+				<a style="color: black;" href="http://tmu.ac.in/upshe-webinar-covid19-way-ahead-in-education/"
+					target="_blank" rel="noopener noreferrer">UPSHE Webinar &#8211; COVID19: Way ahead in
+					Education</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2020/05/A-TMU-Accounts-Detail-with-mail-ID.pdf"
+					target="_blank" rel="noopener noreferrer">TMU Account no details with college Mail ID</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/wp-content/uploads/2020/05/B-exam-form.docx"
+					target="_blank" rel="noopener noreferrer">Format for Exam form</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2020/05/C-Admit-Card-attendance-sheet.docx"
+					target="_blank" rel="noopener noreferrer">Format for Admit Card &#038; Attendance sheet</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2020/05/D-format-for-exam-fee-detail.docx" target="_blank"
+					rel="noopener noreferrer">Format for exam fee detail</a><br />
+				<a style="color: black;" href="tmu.ac.in/admission-notice-for-july-2020-cycle-of-ph-d-program/"
+					target="_blank" rel="noopener noreferrer">Admission Notice for July 2020 Cycle of Ph.D
+					program</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/wp-content/uploads/2020/03/Notice-for-internship.pdf"
+					target="_blank" rel="noopener noreferrer">Internship Notice(Medical &#038; Dental
+					Students.)</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2020/03/Academic-Calendar-2019-20-Amended_v1.0.docx"
+					target="_blank" rel="noopener noreferrer">Academic Calendar 2019-20</a><br />
+				<a style="color: black;" href="https://www.convocation2020.tmu.ac.in/" target="_blank"
+					rel="noopener noreferrer">5<sup>th</sup>Convocation</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2020/02/Operational-details-of-research-assistantship-2019_compressed_compressed.pdf"
+					target="_blank" rel="noopener noreferrer">Operational details of research fellowship for the
+					research Scholars </a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2020/02/TRAT-Result-for-WEBSITE-JAN.-2020.pdf"
+					target="_blank" rel="noopener noreferrer">TRAT Result for January-2020 Cycle </a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2019/12/Intake-for-January-2020-Cycle-.pdf"
+					target="_blank" rel="noopener noreferrer">PhD Intake for January-2020 Cycle </a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2019/09/agriculture-faculty-required-website.jpg"
+					target="_blank" rel="noopener noreferrer">Faculty Recruitment </a><br />
+				<a style="color: black;" href="http://tmu.ac.in/faculty-of-education/2019/07/31/d-el-ed-admission-2019/"
+					target="_blank" rel="noopener">D.El.Ed. Admission 2019-20</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/faculty-of-education/2019/07/31/admission-2019-20/"
+					target="_blank" rel="noopener">B.Ed./M.Ed.Admission 2019-20</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2019/06/The-Schedule-of-Coursework-Examination-for-Ph.D.-Scholars-2019-20.pdf"
+					target="_blank" rel="noopener">Coursework Exam for Ph.D. Scholars</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/wp-content/uploads/2019/05/FEE-STRUCTURE.pdf"
+					target="_blank" rel="noopener">Fee Structure for Ph.D Programme</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/college-of-computing-sciences-and-it/" target="_blank"
+					rel="noopener">International Conference on Advanced Computing (ICAC – 2019)</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/recruitment-notice-23-03-2019/" target="_blank"
+					rel="noopener">Recruitment Notice</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/college-of-computing-sciences-and-it/2019/03/09/arduino-day/" target="_blank"
+					rel="noopener">Arduino Day 2K19</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/poster-competition-on-love-food-hate-waste/"
+					target="_blank" rel="noopener">Poster Competition on Love Food hate waste</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/wp-content/uploads/2019/01/ICAC-Template.pdf"
+					target="_blank" rel="noopener">4th International Conference on Advanced Computing :2019-20</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2019/01/Ph.D.-Admission-Notice-July-2019.pdf"
+					target="_blank" rel="noopener">Admission Notice of PhD Programme for July 2019 Cycle</a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2019/01/Intake-in-Ph.D.-programme-July-2019.pdf"
+					target="_blank" rel="noopener">Intake for July 2019 Cycle of PhD Programme </a><br />
+				<a style="color: black;"
+					href="http://tmu.ac.in/wp-content/uploads/2019/01/The-Schedule-of-Coursework-Examination-for-Ph.D.-Scholars-201-20.pdf"
+					target="_blank" rel="noopener">The Schedule of Coursework Examination for Ph.D Scholars</a><br />
+				<a style="color: black;" href="http://tmu.ac.in/training-programme-academic-leadership-august-2018-19/"
+					target="_blank" rel="noopener">Training Programme on Academic Leadership August : 2018-19</a><br />
+			</center>
+			<p>
+				</marquee>
+			</p>
+
+		</div>
+	</div>
+
+
 
 
 
@@ -200,6 +307,61 @@ if(!isset($_SESSION['user_email'])){
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
+  <!-- Modal -->
+  <div class="modal fade" id="farm_query" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true" style="padding-left: 0 !important; padding-right: 0!important; padding-left:0! important;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content custom-form">
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="query_form">
+            <p class="text-center" style="color:#000; font-size:16px;">Farmer can ask there query from experts by simply
+              speaking</p>
+            <div class="center">
+              <p>
+                <div id="div_language">
+                  <select id="select_language" onchange="updateCountry()" class="form-control mb-2"></select>
+                  <select id="select_dialect" class="form-control mb-2"></select>
+                </div>
+            </div>
+            <!-- <form method="post" id="query">
+                            -->
+
+
+            <div class="form-group">
+              <!-- <div class="col-12" style="  border:1px solid #999999;
+        width:100%; height:400px;"> -->
+        <textarea name="" id="final_span" cols="30" rows="10">
+       
+        </textarea>
+               
+              <!-- </div> -->
+              <!-- </textarea> -->
+              <button id="start_button" onclick="startButton(event)">
+                <img id="start_img" src="mic.gif" alt="Start"></button>
+            </div>
+            <fieldset class="form-group text-center mt-3">
+
+              <input type="hidden" name="signUp" value="1">
+
+              <input class="btn btn-primary" id="submit_query" type="submit" name="submit_query" value="Submit your query">
+
+            </fieldset>
+
+
+
+            <!-- </form> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- jQuery -->
   <script src="js/jquery-3.4.1.min.js"></script>
@@ -213,11 +375,189 @@ if(!isset($_SESSION['user_email'])){
 
   <script src="backend/dist/js/adminlte.js"></script>
 
-  <!-- <script src="backend/dist/js/pages/dashboard.js"></script> -->
-
   <script src="backend/dist/js/demo.js"></script>
 
   <script>
+    var langs = [
+      ['English', ['en-AU', 'Australia'],
+        ['en-CA', 'Canada'],
+        ['en-IN', 'India'],
+        ['en-NZ', 'New Zealand'],
+        ['en-ZA', 'South Africa'],
+        ['en-GB', 'United Kingdom'],
+        ['en-US', 'United States']
+      ],
+      ['Hindi', ['hi']],
+      ['Bengali', ['bn']],
+      ['Malayam', ['ml']],
+      ['Bihari', ['bh']],
+      ['Gujarati', ['gu']],
+      ['Marathi', ['mr']],
+      ['Punjabi', ['pa']],
+      ['Tamil', ['ta']],
+      ['Telegu', ['te']]
+    ];
+
+    for (var i = 0; i < langs.length; i++) {
+      select_language.options[i] = new Option(langs[i][0], i);
+    }
+    select_language.selectedIndex = 6;
+    updateCountry();
+    select_dialect.selectedIndex = 6;
+    //showInfo('info_start');
+
+    function updateCountry() {
+      for (var i = select_dialect.options.length - 1; i >= 0; i--) {
+        select_dialect.remove(i);
+      }
+      var list = langs[select_language.selectedIndex];
+      for (var i = 1; i < list.length; i++) {
+        select_dialect.options.add(new Option(list[i][1], list[i][0]));
+      }
+      select_dialect.style.visibility = list[1].length == 1 ? 'hidden' : 'visible';
+    }
+
+    var create_email = false;
+    var final_transcript = '';
+    var recognizing = false;
+    var ignore_onend;
+    var start_timestamp;
+    if (!('webkitSpeechRecognition' in window)) {
+      //upgrade();
+    } else {
+      start_button.style.display = 'inline-block';
+      var recognition = new webkitSpeechRecognition();
+      recognition.interimResults = true;
+
+      recognition.onstart = function () {
+        recognizing = true;
+        //showInfo('info_speak_now');
+        start_img.src = 'mic-animate.gif';
+      };
+
+      // recognition.onerror = function(event) {
+      //   if (event.error == 'no-speech') {
+      //     start_img.src = 'mic.gif';
+      //     showInfo('info_no_speech');
+      //     ignore_onend = true;
+      //   }
+      //   if (event.error == 'audio-capture') {
+      //     start_img.src = 'mic.gif';
+      //     showInfo('info_no_microphone');
+      //     ignore_onend = true;
+      //   }
+      //   if (event.error == 'not-allowed') {
+      //     if (event.timeStamp - start_timestamp < 100) {
+      //      // showInfo('info_blocked');
+      //     } else {
+      //      // showInfo('info_denied');
+      //     }
+      //     ignore_onend = true;
+      //   }
+      // };
+
+      recognition.onend = function () {
+        recognizing = false;
+        if (ignore_onend) {
+          return;
+        }
+        start_img.src = 'mic.gif';
+        if (!final_transcript) {
+          //showInfo('info_start');
+          return;
+        }
+        // showInfo('');
+        if (window.getSelection) {
+          window.getSelection().removeAllRanges();
+          var range = document.createRange();
+          range.selectNode(document.getElementById('final_span'));
+          window.getSelection().addRange(range);
+        }
+        if (create_email) {
+          create_email = false;
+          createEmail();
+        }
+      };
+
+      recognition.onresult = function (event) {
+        var interim_transcript = '';
+        for (var i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            final_transcript += event.results[i][0].transcript;
+          } else {
+            interim_transcript += event.results[i][0].transcript;
+          }
+        }
+        final_transcript = capitalize(final_transcript);
+        final_span.innerHTML = linebreak(final_transcript);
+       // interim_span.innerHTML = linebreak(interim_transcript);
+        if (final_transcript || interim_transcript) {
+          showButtons('inline-block');
+        }
+      };
+    }
+
+    // function upgrade() {
+    //   start_button.style.visibility = 'hidden';
+    //   showInfo('info_upgrade');
+    // }
+
+    var two_line = /\n\n/g;
+    var one_line = /\n/g;
+
+    function linebreak(s) {
+      return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+    }
+
+    var first_char = /\S/;
+
+    function capitalize(s) {
+      return s.replace(first_char, function (m) {
+        return m.toUpperCase();
+      });
+    }
+
+
+
+    function startButton(event) {
+      if (recognizing) {
+        recognition.stop();
+        return;
+      }
+      final_transcript = '';
+      recognition.lang = select_dialect.value;
+      recognition.start();
+      ignore_onend = false;
+      final_span.innerHTML = '';
+      //interim_span.innerHTML = '';
+      start_img.src = 'mic-slash.gif';
+      // showInfo('info_allow');
+      showButtons('none');
+      start_timestamp = event.timeStamp;
+    }
+
+    // function showInfo(s) {
+    //   if (s) {
+    //     for (var child = info.firstChild; child; child = child.nextSibling) {
+    //       if (child.style) {
+    //         child.style.display = child.id == s ? 'inline' : 'none';
+    //       }
+    //     }
+    //     info.style.visibility = 'visible';
+    //   } else {
+    //     info.style.visibility = 'hidden';
+    //   }
+    // }
+
+    var current_style;
+
+    function showButtons(style) {
+      if (style == current_style) {
+        return;
+      }
+      current_style = style;
+
+    }
 
   </script>
 </body>

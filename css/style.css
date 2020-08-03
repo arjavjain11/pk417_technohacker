@@ -104,3 +104,16 @@
             border-radius: 0px;
         }
     }
+
+
+
+.news
+{
+     background-color: #e6e6e6;
+     width: 30%; 
+     border-radius: 12px; 
+     border: 15px outset #ea5e0d; 
+     height: 80%; 
+     padding:15px;
+     margin: 6% 5% 3% 7%;
+}
