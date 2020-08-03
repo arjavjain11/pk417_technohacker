@@ -42,6 +42,10 @@
       <input class="un" type="email" placeholder="email" name="email">
       <input type="text"  class="un" placeholder="phone no" name="phone">
       <input class="pass" type="password" placeholder="Password" name="password">
+      <select name="user" id="user">
+        <option value="user">Farmer</option>
+        <option value="Expert">Expert</option>
+      </select>
       <!-- <input type="hidden" name="signUp" value="1"> -->
       <button class="submit" name="signUp">Sign Up</button>
       <p class="text-center mt-3" style="color: rgb(38, 50, 56);
