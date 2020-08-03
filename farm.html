@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--head section-->
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <style>
+        .custom-form {
+            background: #FFFFFF !important;
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 3px;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .signup-form {
+            border: 4px solid #282262;
+            border-radius: 3px;
+            opacity: 1;
+        }
+
+        .signup-form h1 {
+            font-size: 40px;
+            color: #000;
+            line-height: 1.2;
+            padding: 10px;
+        }
+
+        .input-group-text {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: .375rem .75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-family: barlow-r;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+            white-space: nowrap;
+            /* background-color: #e9ecef;*/
+            /*  border: 1px solid #ced4da;*/
+            /*border-radius: .25rem;*/
+            background: #282262 0% 0% no-repeat padding-box;
+            border-radius: 3px;
+            opacity: 1;
+            color: #fff;
+            border: none !important;
+        }
+
+        fieldset .input-group-text:hover {
+            background-color: #00000029;
+        }
+
+        fieldset input:focus {
+            outline: none;
+        }
+
+        .signup-form .form-control {
+            border: 1px solid #707070;
+            border-left: none;
+            border-radius: 3px;
+            opacity: 1;
+        }
+
+        .signup-form .btnsignup {
+            background: #282262 0% 0% no-repeat padding-box;
+            border-radius: 3px;
+            opacity: 1;
+            color: #fff;
+            font-size: 15px;
+            font-family: barlow-r;
+            padding: 7px 29px;
+        }
+
+        fieldset .input-group .col-4 {
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 33%;
+        }
+        .formrow .col-6.country fieldset .input-group .col-5,
+            .formrow .col-6.pincode fieldset .input-group .col-5 {
+                padding-left: 0;
+                padding-right: 0;
+                max-width:38% !important;
+            }
+
+        @media screen and (max-width: 991px) {
+
+            .formrow .col-6 fieldset .input-group .col-4 {
+                padding-left: 0;
+                padding-right: 0;
+                max-width: 45%;
+            }
+            .formrow .col-6.country fieldset .input-group .col-5,
+            .formrow .col-6.pincode fieldset .input-group .col-5 {
+                padding-left: 0;
+                padding-right: 0;
+                max-width: 45% !important;
+            }
+
+        }
+
+        @media screen and (max-width: 576px) {
+
+            .formrow .col-6 fieldset .input-group .col-4,
+            fieldset .input-group .col-4 {
+                padding-left: 0;
+                padding-right: 0;
+                max-width: 45% !important;
+            }
+
+            .formrow .col-6.country fieldset .input-group .col-5,
+            .formrow .col-6.pincode fieldset .input-group .col-5 {
+                padding-left: 0;
+                padding-right: 0;
+                max-width: 56% !important;
+            }
+
+            .custom-form.row {
+                margin-left: 0;
+            }
+
+            label {
+                font-size: 12px !important;
+            }
+
+            .iconupload {
+                font-size: 16px !important;
+            }
+
+            .updateimage {
+                padding-right: 0;
+            }
+
+            .pb-5.signupsection {
+                padding-bottom: 2rem !important;
+            }
+
+            .pt-5.signupsection {
+                padding-top: 2rem !important;
+            }
+
+        }
+
+        .modal-content {
+            background-color: transparent;
+            border: none;
+        }
+
+        .modal-header {
+            border-bottom: none;
+        }
+
+        .formrow .col-6.city {
+            padding-left: 15px;
+            padding-right: 10px;
+        }
+
+        .formrow .col-6.state {
+            padding-left: 5px;
+            padding-right: 15px;
+        }
+
+        .formrow .col-6.country {
+            padding-left: 15px;
+            padding-right: 10px;
+        }
+
+        .formrow .col-6.pincode {
+            padding-left: 5px;
+            padding-right: 15px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            background: #282262 0% 0% no-repeat padding-box;
+            border-radius: 3px;
+            opacity: 1;
+            color: #fff;
+            width: 100%;
+            padding: 6px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .iconupload {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true" style="padding-left: 0 !important; padding-right: 0!important; padding-left:0! important;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content custom-form">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="signup-form custom-form">
+
+                        <form method="post" id="profileupdate" style="padding: 15px;">
+                            <!-- <div class="row" style="margin-bottom: 1rem;">
+                                <div class="col-4 updateimage"><img src="" width="100%" height="130"></div>
+                                <div class="col-8">
+                                    <p class="font-barlow-r pb-2" style="font-size: 20px;">Profile Picture</p>
+                                    <label><i class="fa fa-cloud-upload mr-3 iconupload"></i>Upload Profile Picture
+                                        <input type="file" name="image" class="mb-3" value="">
+                                    </label>
+                                    <span class="font-barlow-r mb-3" style="font-size: 12px;">Note: Please submit a
+                                        picture of 24X30 Pixels etc</span>
+                                </div>
+                            </div> -->
+
+
+                            <!-- <fieldset class="form-group" style="text-align: right;">
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend col-4">
+                                        <span class="input-group-text col-12">Full Name</span>
+                                    </div>
+                                    <input class="form-control" type="text" name="name">
+                                </div>
+                                <span class="font-barlow-r text-center" style="font-size: 12px;">This will appear in
+                                    your
+                                    Certificate</span>
+                            </fieldset> -->
+
+                            <!-- <fieldset class="form-group">
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend col-4">
+                                        <span class="input-group-text col-12">Email Id</span>
+                                    </div>
+                                    <input class="form-control" type="email" name="email">
+                                </div>
+
+                            </fieldset> -->
+                            <!-- <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend col-4">
+                                        <span class="input-group-text col-12">New Password</span>
+                                    </div>
+                                    <input class="form-control" type="text" name="newpassword">
+                                </div>
+                                <span class="font-barlow-r text-center" style="font-size: 12px;">Use 8 or more
+                                    characters with a
+                                    mix of letters, numbers and symbols. Must not contain your name or username.</span>
+                            </fieldset> -->
+                            <!-- <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend col-4">
+                                        <span class="input-group-text col-12">Mobile Number</span>
+                                    </div>
+                                    <input class="form-control" type="number" name="mobileno">
+                                </div>
+
+                            </fieldset> -->
+
+
+
+                            <!-- <p class="font-barlow-r text-center pt-3 pb-1" style="color: black; font-size: 20px;">
+                                Address For Communication</p>
+                            <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend col-4">
+                                        <span class="input-group-text col-12">Address Line 1</span>
+                                    </div>
+                                    <input class="form-control" type="text" name="addressline1">
+                                </div>
+
+                            </fieldset>
+                            <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend col-4">
+                                        <span class="input-group-text col-12">Address Line 2</span>
+                                    </div>
+                                    <input class="form-control" type="text" name="addressline2">
+                                </div>
+
+                            </fieldset>
+                            <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend col-4">
+                                        <span class="input-group-text col-12">Address Line 3</span>
+                                    </div>
+                                    <input class="form-control" type="text" name="addressline3">
+                                </div>
+
+                            </fieldset>
+
+
+                            <div class="row formrow">
+                                <div class="col-6 city">
+                                    <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend col-4">
+                                                <span class="input-group-text col-12">City</span>
+                                            </div>
+                                            <input class="form-control" type="text" name="city">
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+                                <div class="col-6 state">
+                                    <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend col-4">
+                                                <span class="input-group-text col-12">State</span>
+                                            </div>
+                                            <input class="form-control" type="text" name="state">
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row formrow">
+                                <div class="col-6 country">
+                                    <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend col-5">
+                                                <span class="input-group-text col-12">Country</span>
+                                            </div>
+                                            <input class="form-control" type="text" name="Country">
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+                                <div class="col-6 pincode">
+                                    <fieldset class="form-group text-center" style="line-height: 1;">
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend col-5">
+                                                <span class="input-group-text col-12">Pincode</span>
+                                            </div>
+                                            <input class="form-control" type="number" name="pincode">
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+                                <textarea name="" id="" cols="30" class="form-control" rows="10"></textarea>  
+                            </div>
+                            <fieldset class="form-group text-center mt-3">
+
+                                <input type="hidden" name="signUp" value="1"> 
+
+                                <input class="btn btnsignup" type="submit" name="submit" value="Save Changes">
+
+                            </fieldset>
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--script start-->
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+    <!--script end-->
+</body>
+
+<!--body end-->
+
+</html>
